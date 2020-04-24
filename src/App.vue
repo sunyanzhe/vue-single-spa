@@ -1,18 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <ul class="nav">
+        <li>
+            <router-link to="/app1">APP1</router-link>
+        </li>
+        <li>
+            <router-link to="/app1/about">APP1-About</router-link>
+        </li>
+        <li>
+            <router-link to="/app2">APP2</router-link>
+        </li>
+      </ul>
+      <div class="content">
+          <div id="app1" class="single-spa-vue"></div>
+      </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
@@ -24,5 +32,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  min-height: 500px;
 }
+.nav {
+    flex-basis: 150px;
+}
+.content {
+    flex-grow: 2;
+    padding: 10px;
+    position: relative;
+    background: #f0f0f0;
+}
+
 </style>
